@@ -1,31 +1,60 @@
-// Typewriter Effect for Hero Title
-const typewriterText = document.getElementById('typewriter-text');
+// Typewriter Effect for Hero Title with animated first letter & caret
+const typewriterFirst = document.getElementById('typewriter-first');
+const typewriterRest = document.getElementById('typewriter-rest');
+const typewriterLive = document.getElementById('typewriter-live');
+const caret = document.querySelector('.caret');
+
 const phrases = [
     'Building growth autopilot for high-intent leads.',
     'AI copilots that book meetings while you sleep.',
     'Human-grade outreach with automated precision.'
 ];
+const firstPalette = ['#ffbd59', '#fd9434', '#e3ce42', '#ae3724', '#d1462a', '#fd5934'];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 
-function typeWriter() {
-    if (!typewriterText) return;
-    const current = phrases[wordIndex % phrases.length];
-    typewriterText.textContent = current.substring(0, charIndex);
+function renderTypewriterText(displayLength, current) {
+    const firstChar = current.charAt(0);
+    const remainder = current.slice(1);
+    const hasFirst = displayLength > 0;
 
-    if (!isDeleting && charIndex < current.length) {
+    if (typewriterFirst) {
+        typewriterFirst.textContent = hasFirst ? firstChar : '';
+        typewriterFirst.style.background = firstPalette[wordIndex % firstPalette.length];
+    }
+
+    if (typewriterRest) {
+        typewriterRest.textContent = displayLength > 1 ? remainder.substring(0, displayLength - 1) : '';
+    }
+
+    if (typewriterLive) {
+        typewriterLive.textContent = (hasFirst ? firstChar : '') + (typewriterRest?.textContent ?? '');
+    }
+}
+
+function typeWriter() {
+    if (!typewriterRest || !typewriterFirst) return;
+    const current = phrases[wordIndex % phrases.length];
+    const displayLength = charIndex;
+
+    renderTypewriterText(displayLength, current);
+
+    if (!isDeleting && displayLength < current.length) {
+        caret?.classList.add('is-typing');
         charIndex++;
         setTimeout(typeWriter, 90);
-    } else if (isDeleting && charIndex > 0) {
+    } else if (isDeleting && displayLength > 0) {
+        caret?.classList.add('is-typing');
         charIndex--;
-        setTimeout(typeWriter, 50);
+        setTimeout(typeWriter, 55);
     } else {
+        caret?.classList.remove('is-typing');
         isDeleting = !isDeleting;
         if (!isDeleting) {
             wordIndex++;
         }
-        setTimeout(typeWriter, isDeleting ? 1200 : 350);
+        setTimeout(typeWriter, isDeleting ? 1200 : 450);
     }
 }
 
@@ -62,3 +91,16 @@ faqItems.forEach(item => {
         item.querySelector('.caret').textContent = expanded ? '+' : '−';
     });
 });
+
+// Reveal animations on scroll
+const animatedBlocks = document.querySelectorAll('.animate');
+const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            obs.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.2 });
+
+animatedBlocks.forEach(el => observer.observe(el));
