@@ -1,55 +1,64 @@
 // Typewriter Effect for Hero Title
 const typewriterText = document.getElementById('typewriter-text');
-const words = ["We build your AI system in 14 days.", "Start with a free trial.", "No risk, no hassle."];
+const phrases = [
+    'Building growth autopilot for high-intent leads.',
+    'AI copilots that book meetings while you sleep.',
+    'Human-grade outreach with automated precision.'
+];
 let wordIndex = 0;
 let charIndex = 0;
-let currentWord = "";
 let isDeleting = false;
 
 function typeWriter() {
-    if (wordIndex === words.length) {
-        wordIndex = 0;
-    }
+    if (!typewriterText) return;
+    const current = phrases[wordIndex % phrases.length];
+    typewriterText.textContent = current.substring(0, charIndex);
 
-    currentWord = words[wordIndex];
-    if (isDeleting) {
-        charIndex--;
-    } else {
+    if (!isDeleting && charIndex < current.length) {
         charIndex++;
-    }
-
-    typewriterText.textContent = currentWord.substring(0, charIndex);
-
-    if (charIndex === currentWord.length) {
-        isDeleting = true;
-        setTimeout(typeWriter, 1000);
-    } else if (charIndex === 0) {
-        isDeleting = false;
-        wordIndex++;
-        setTimeout(typeWriter, 500);
+        setTimeout(typeWriter, 90);
+    } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(typeWriter, 50);
     } else {
-        setTimeout(typeWriter, 150);
+        isDeleting = !isDeleting;
+        if (!isDeleting) {
+            wordIndex++;
+        }
+        setTimeout(typeWriter, isDeleting ? 1200 : 350);
     }
 }
 
-window.onload = typeWriter;
+typeWriter();
 
 // Mobile Menu Toggle
 const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+const nav = document.querySelector('.nav');
 
-mobileMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
+mobileMenu?.addEventListener('click', () => {
+    nav?.classList.toggle('open');
+    const expanded = mobileMenu.getAttribute('aria-expanded') === 'true';
+    mobileMenu.setAttribute('aria-expanded', (!expanded).toString());
 });
 
 // Smooth Scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+const scrollLinks = document.querySelectorAll('a[href^="#"]');
+scrollLinks.forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+// FAQ Toggle
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const expanded = item.getAttribute('aria-expanded') === 'true';
+        item.setAttribute('aria-expanded', (!expanded).toString());
+        item.querySelector('.caret').textContent = expanded ? '+' : '−';
     });
 });
