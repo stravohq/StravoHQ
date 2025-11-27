@@ -1,0 +1,200 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0ebe8;
+    color: #333;
+    font-size: 18px;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo img {
+    width: 150px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fd9434;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 4px;
+    margin: 5px;
+    background-color: #333;
+    transition: 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: white;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .nav-links li {
+        margin: 10px 0;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(-45deg);
+        transform-origin: top left;
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(45deg);
+        transform-origin: bottom left;
+    }
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #ae3724;
+}
+
+.glowing-btn {
+    background-color: #fd9434;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #fd9434, 0 0 20px #fd9434;
+    transition: all 0.3s ease;
+}
+
+.glowing-btn:hover {
+    background-color: #fd5934;
+    box-shadow: 0 0 30px #fd5934, 0 0 40px #fd5934;
+}
+
+/* About Section */
+.about {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.about h2 {
+    color: #ae3724;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 50px 20px;
+    background-color: #fd9434;
+    color: white;
+    text-align: center;
+}
+
+.how-it-works .step {
+    margin: 20px;
+}
+
+.step h3 {
+    color: white;
+}
+
+/* Qualification Form */
+.qualification-form {
+    padding: 50px 20px;
+    background-color: #e3ce42;
+    text-align: center;
+}
+
+.qualification-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qualification-form input {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+}
+
+.qualification-form button {
+    background-color: #fd9434;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #fd9434, 0 0 20px #fd9434;
+    transition: all 0.3s ease;
+}
+
+.qualification-form button:hover {
+    background-color: #fd5934;
+    box-shadow: 0 0 30px #fd5934, 0 0 40px #fd5934;
+}
+
+/* Footer */
+footer {
+    background-color: #ae3724;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
