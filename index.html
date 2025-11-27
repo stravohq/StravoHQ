@@ -1,89 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="StravoHQ builds AI-powered systems that turn customer interest into booked appointments. Experience the future of AI lead generation.">
-    <title>StravoHQ - AI Revenue Systems</title>
+    <meta name="description" content="StravoHQ builds AI-first revenue systems that book meetings while you sleep. Modern automations, human-caliber outreach, and bulletproof reporting in one platform.">
+    <title>StravoHQ | AI Revenue Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-    <!-- Navigation Bar -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="stravo-logo.png" alt="StravoHQ Logo">
+    <div class="page-wrap">
+        <header class="top-bar">
+            <div class="brand">StravoHQ</div>
+            <nav class="nav" aria-label="Primary">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#results">Results</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="actions">
+                <a class="ghost" href="#contact">Talk to us</a>
+                <button class="btn primary" id="trial-btn">Start trial</button>
+                <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#terms">Terms</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        </header>
+
+        <main>
+            <section id="home" class="hero">
+                <div class="hero__content">
+                    <p class="eyebrow">AI appointment engines for modern teams</p>
+                    <h1 id="typewriter-text">Building growth autopilot for high-intent leads.</h1>
+                    <p class="lede">We design, deploy, and optimize AI-driven revenue systems that keep your calendar full. Every touchpoint is orchestrated with human-grade messaging and real-time analytics.</p>
+                    <div class="cta-group">
+                        <button class="btn primary">Start your 14-day pilot</button>
+                        <a class="btn secondary" href="#process">See how it works</a>
+                    </div>
+                    <div class="pill-row">
+                        <span class="pill">Live in under 14 days</span>
+                        <span class="pill">Omnichannel outreach</span>
+                        <span class="pill">Done-for-you optimization</span>
+                    </div>
+                    <div class="hero__metrics">
+                        <div>
+                            <strong>4.8/5</strong>
+                            <span>Average client rating</span>
+                        </div>
+                        <div>
+                            <strong>37%</strong>
+                            <span>Increase in booked calls</span>
+                        </div>
+                        <div>
+                            <strong>24/7</strong>
+                            <span>AI concierge coverage</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__panel">
+                    <div class="panel-card">
+                        <p class="panel-title">Revenue cockpit</p>
+                        <ul>
+                            <li>Smart sequences across email, DMs, SMS, and forms</li>
+                            <li>Lead scoring with real-time intent signals</li>
+                            <li>Calendar-native booking and reminders</li>
+                            <li>Weekly optimization with your strategist</li>
+                        </ul>
+                        <div class="mini-cta">
+                            <button class="btn primary">Book a demo</button>
+                            <span class="caption">No commitment. See your system before launch.</span>
+                        </div>
+                    </div>
+                    <div class="panel-gradient"></div>
+                </div>
+            </section>
+
+            <section id="solutions" class="brands">
+                <p class="label">Trusted by revenue teams shipping fast</p>
+                <div class="brand-row">
+                    <span>Product studios</span>
+                    <span>Consultancies</span>
+                    <span>B2B SaaS</span>
+                    <span>Agencies</span>
+                    <span>Creators</span>
+                </div>
+            </section>
+
+            <section class="feature-grid" id="results">
+                <div class="section-heading">
+                    <p class="label">What you get</p>
+                    <h2>AI systems that act like your best SDR—on every channel.</h2>
+                    <p class="subtext">From discovery to booked call, every touch is designed to feel personal. We combine automation with human review so the outreach always sounds like you.</p>
+                </div>
+                <div class="grid">
+                    <article class="card">
+                        <div class="icon">🚀</div>
+                        <h3>Launch-ready sequences</h3>
+                        <p>We build contextual playbooks for your audience with multi-touch cadences, smart delays, and escalation paths that respond to intent.</p>
+                    </article>
+                    <article class="card">
+                        <div class="icon">🤖</div>
+                        <h3>AI copilots with guardrails</h3>
+                        <p>Custom agents handle replies, qualify leads, and book meetings—always supervised with conversation-level overrides.</p>
+                    </article>
+                    <article class="card">
+                        <div class="icon">📊</div>
+                        <h3>Pipeline clarity</h3>
+                        <p>Unified dashboard with campaign health, conversion rates, and message insights so you know where to double down.</p>
+                    </article>
+                    <article class="card">
+                        <div class="icon">🧭</div>
+                        <h3>Strategy on repeat</h3>
+                        <p>Weekly optimization sessions and A/B testing to improve replies, deliverability, and booking velocity.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="process" class="timeline">
+                <div class="section-heading">
+                    <p class="label">How we work</p>
+                    <h2>From strategy to live bookings in four moves.</h2>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <span class="step-number">01</span>
+                        <div>
+                            <h3>Blueprint</h3>
+                            <p>We audit your funnel, audiences, and offers to map the messages and channels that convert.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">02</span>
+                        <div>
+                            <h3>Build</h3>
+                            <p>We deploy AI agents, integrations, and sequences across email, chat, and forms with your brand voice.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">03</span>
+                        <div>
+                            <h3>Launch</h3>
+                            <p>Go live with safety checks, human QA, and shadow mode so every interaction feels intentional.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">04</span>
+                        <div>
+                            <h3>Optimize</h3>
+                            <p>We iterate weekly with new prompts, offers, and experiments to keep your calendar filling up.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-band">
+                <div>
+                    <p class="label">Calendar-filling outreach</p>
+                    <h2>See your first booked calls in 14 days or less.</h2>
+                    <p class="subtext">Pair AI with human operators to remove response gaps, qualify faster, and keep prospects engaged.</p>
+                </div>
+                <div class="cta-actions">
+                    <button class="btn primary">Get a live walkthrough</button>
+                    <button class="btn secondary" aria-label="Download playbook">Download our playbook</button>
+                </div>
+            </section>
+
+            <section class="testimonials" aria-labelledby="testimonials-title">
+                <div class="section-heading">
+                    <p class="label">Customer outcomes</p>
+                    <h2 id="testimonials-title">Growth leaders partner with StravoHQ.</h2>
+                </div>
+                <div class="testimonial-grid">
+                    <article class="quote">
+                        <p>“StravoHQ rebuilt our outbound in two weeks. We went from manual follow-ups to a fully booked calendar without adding headcount.”</p>
+                        <div class="author">— Priya Singh, COO @ SaaS Studio</div>
+                    </article>
+                    <article class="quote">
+                        <p>“The AI concierge answers prospects instantly and books meetings in our team's calendars. The reporting makes it easy to see what’s working.”</p>
+                        <div class="author">— Michael Chen, Head of Revenue @ B2B Marketplace</div>
+                    </article>
+                    <article class="quote">
+                        <p>“Our reps love the handoffs. StravoHQ keeps the conversation going and surfaces only the buyers ready to talk. Close rates improved by 18%.”</p>
+                        <div class="author">— Alicia Gomez, VP Sales @ Fintech Services</div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="faq" class="faq" aria-labelledby="faq-title">
+                <div class="section-heading">
+                    <p class="label">Questions</p>
+                    <h2 id="faq-title">Everything you need to know.</h2>
+                </div>
+                <div class="faq-list">
+                    <button class="faq-item" aria-expanded="false">
+                        <span>How fast can we go live?</span>
+                        <span class="caret">+</span>
+                    </button>
+                    <div class="faq-panel">Most customers launch in 10–14 days. We run discovery, build your playbooks, set up integrations, and QA conversations before switching on bookings.</div>
+
+                    <button class="faq-item" aria-expanded="false">
+                        <span>Which channels do you support?</span>
+                        <span class="caret">+</span>
+                    </button>
+                    <div class="faq-panel">Email, LinkedIn DMs, SMS, web chat, and form follow-ups are all supported. We’ll prioritize the mix that matches your buyers and compliance needs.</div>
+
+                    <button class="faq-item" aria-expanded="false">
+                        <span>Do humans review the AI?</span>
+                        <span class="caret">+</span>
+                    </button>
+                    <div class="faq-panel">Yes. Conversation-level supervision and scheduled QA reviews ensure tone, accuracy, and offer positioning stay on-brand.</div>
+
+                    <button class="faq-item" aria-expanded="false">
+                        <span>Can you work with our existing tools?</span>
+                        <span class="caret">+</span>
+                    </button>
+                    <div class="faq-panel">We integrate with major CRMs, calendars, and messaging tools. If you have a unique stack, we’ll bridge it with lightweight connectors.</div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="contact" class="footer">
+            <div>
+                <p class="label">StravoHQ</p>
+                <p>AI-powered revenue systems that book qualified meetings for your team.</p>
             </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1 id="typewriter-text"></h1>
-        <p>We build AI systems that convert leads into appointments automatically. Book a free demo and get started today.</p>
-        <button class="cta glowing-btn" id="trial-btn">Start Your Trial</button>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="about">
-        <h2>About StravoHQ</h2>
-        <p>At StravoHQ, we create fully automated AI systems to convert your leads into appointments without manual chasing. Let us take care of your lead generation while you focus on growing your business.</p>
-    </section>
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works">
-        <h2>How StravoHQ Works</h2>
-        <div class="step">
-            <h3>Step 1: Diagnose & Plan</h3>
-            <p>We map out the exact process your leads go through, ensuring your AI system is tailored to your business.</p>
-        </div>
-        <div class="step">
-            <h3>Step 2: Build & Integrate</h3>
-            <p>We build and integrate the AI system across all platforms you use—DMs, emails, forms, and more—into one seamless flow.</p>
-        </div>
-        <div class="step">
-            <h3>Step 3: Launch & Optimize</h3>
-            <p>Your system goes live, optimized for conversion. We continuously monitor and refine the AI’s performance.</p>
-        </div>
-    </section>
-
-    <!-- Qualification Form -->
-    <section id="qualification-form" class="qualification-form">
-        <h2>Qualify For Your Free Trial</h2>
-        <form id="qualification-form">
-            <label for="business-type">What service or business do you run?</label>
-            <input type="text" id="business-type" name="business-type" required>
-
-            <label for="revenue">What is your monthly revenue range?</label>
-            <input type="text" id="revenue" name="revenue" required>
-
-            <button type="submit" class="cta glowing-btn">Submit & Schedule Demo</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-content">
-            <p>© 2025 StravoHQ. All rights reserved.</p>
-        </div>
-    </footer>
-
+            <div class="footer-links">
+                <a href="#solutions">Solutions</a>
+                <a href="#process">Process</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer-cta">
+                <p>Ready to fill your calendar?</p>
+                <button class="btn primary">Start your pilot</button>
+            </div>
+        </footer>
+    </div>
     <script src="script.js"></script>
 </body>
-
 </html>
