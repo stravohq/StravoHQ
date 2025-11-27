@@ -34,9 +34,14 @@
 
         <main>
             <section id="home" class="hero">
-                <div class="hero__content">
+                <div class="hero__content animate">
                     <p class="eyebrow">AI appointment engines for modern teams</p>
-                    <h1 id="typewriter-text">Building growth autopilot for high-intent leads.</h1>
+                    <h1 class="typewriter">
+                        <span id="typewriter-first" aria-hidden="true"></span>
+                        <span id="typewriter-rest"></span>
+                        <span class="caret" aria-hidden="true"></span>
+                        <span class="sr-only" id="typewriter-live">Building growth autopilot for high-intent leads.</span>
+                    </h1>
                     <p class="lede">We design, deploy, and optimize AI-driven revenue systems that keep your calendar full. Every touchpoint is orchestrated with human-grade messaging and real-time analytics.</p>
                     <div class="cta-group">
                         <button class="btn primary">Start your 14-day pilot</button>
@@ -61,8 +66,13 @@
                             <span>AI concierge coverage</span>
                         </div>
                     </div>
+                    <div class="floating-ribbon">
+                        <span>Premium build quality</span>
+                        <span>Luxury-grade messaging</span>
+                        <span>Concierge support</span>
+                    </div>
                 </div>
-                <div class="hero__panel">
+                <div class="hero__panel animate delay-1">
                     <div class="panel-card">
                         <p class="panel-title">Revenue cockpit</p>
                         <ul>
@@ -77,10 +87,11 @@
                         </div>
                     </div>
                     <div class="panel-gradient"></div>
+                    <div class="glow-orb"></div>
                 </div>
             </section>
 
-            <section id="solutions" class="brands">
+            <section id="solutions" class="brands animate">
                 <p class="label">Trusted by revenue teams shipping fast</p>
                 <div class="brand-row">
                     <span>Product studios</span>
@@ -91,7 +102,7 @@
                 </div>
             </section>
 
-            <section class="feature-grid" id="results">
+            <section class="feature-grid animate" id="results">
                 <div class="section-heading">
                     <p class="label">What you get</p>
                     <h2>AI systems that act like your best SDR—on every channel.</h2>
@@ -121,7 +132,7 @@
                 </div>
             </section>
 
-            <section id="process" class="timeline">
+            <section id="process" class="timeline animate">
                 <div class="section-heading">
                     <p class="label">How we work</p>
                     <h2>From strategy to live bookings in four moves.</h2>
@@ -158,7 +169,7 @@
                 </div>
             </section>
 
-            <section class="cta-band">
+            <section class="cta-band animate">
                 <div>
                     <p class="label">Calendar-filling outreach</p>
                     <h2>See your first booked calls in 14 days or less.</h2>
@@ -170,7 +181,7 @@
                 </div>
             </section>
 
-            <section class="testimonials" aria-labelledby="testimonials-title">
+            <section class="testimonials animate" aria-labelledby="testimonials-title">
                 <div class="section-heading">
                     <p class="label">Customer outcomes</p>
                     <h2 id="testimonials-title">Growth leaders partner with StravoHQ.</h2>
@@ -191,7 +202,7 @@
                 </div>
             </section>
 
-            <section id="faq" class="faq" aria-labelledby="faq-title">
+            <section id="faq" class="faq animate" aria-labelledby="faq-title">
                 <div class="section-heading">
                     <p class="label">Questions</p>
                     <h2 id="faq-title">Everything you need to know.</h2>
