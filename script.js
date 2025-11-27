@@ -10,9 +10,14 @@ const phrases = [
     'Human-grade outreach with automated precision.'
 ];
 const firstPalette = ['#ffbd59', '#fd9434', '#e3ce42', '#ae3724', '#d1462a', '#fd5934'];
+const typingSpeed = 70;
+const deletingSpeed = 42;
+const holdDuration = 1700;
+const leadInDelay = 320;
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function renderTypewriterText(displayLength, current) {
     const firstChar = current.charAt(0);
@@ -21,7 +26,9 @@ function renderTypewriterText(displayLength, current) {
 
     if (typewriterFirst) {
         typewriterFirst.textContent = hasFirst ? firstChar : '';
-        typewriterFirst.style.background = firstPalette[wordIndex % firstPalette.length];
+        const accent = firstPalette[wordIndex % firstPalette.length];
+        typewriterFirst.style.background = accent;
+        document.documentElement.style.setProperty('--secondary', accent);
     }
 
     if (typewriterRest) {
@@ -40,21 +47,30 @@ function typeWriter() {
 
     renderTypewriterText(displayLength, current);
 
-    if (!isDeleting && displayLength < current.length) {
-        caret?.classList.add('is-typing');
-        charIndex++;
-        setTimeout(typeWriter, 90);
-    } else if (isDeleting && displayLength > 0) {
-        caret?.classList.add('is-typing');
-        charIndex--;
-        setTimeout(typeWriter, 55);
-    } else {
+    if (reduceMotion) {
+        typewriterRest.textContent = current.slice(1);
+        typewriterLive.textContent = current;
         caret?.classList.remove('is-typing');
+        return;
+    }
+
+    const isAtEnd = displayLength === current.length;
+    const isAtStart = displayLength === 0;
+    caret?.classList.toggle('is-typing', !(isDeleting && isAtStart));
+
+    if (!isDeleting && !isAtEnd) {
+        charIndex++;
+        setTimeout(typeWriter, typingSpeed);
+    } else if (isDeleting && !isAtStart) {
+        charIndex--;
+        setTimeout(typeWriter, deletingSpeed);
+    } else {
         isDeleting = !isDeleting;
         if (!isDeleting) {
             wordIndex++;
         }
-        setTimeout(typeWriter, isDeleting ? 1200 : 450);
+        const pause = isDeleting ? holdDuration : leadInDelay;
+        setTimeout(typeWriter, pause);
     }
 }
 
